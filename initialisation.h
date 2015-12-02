@@ -5,3 +5,4 @@ void modifier_cellules();			// permet a l'utilisateur de modifier les cellules d
 
 void charger_fichier();				// permet de changer une configuration de l'automate ( une matrice ) demander chemin absolut 
 
+      
