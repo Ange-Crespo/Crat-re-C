@@ -1,0 +1,76 @@
+#include <stdio.h>
+#include <timecrat.h>
+#include <edit.h>
+#include <salo.h>
+
+void choix(){
+
+ // premet d'afficher à tout moment le menu et donc de mettre en pause l'automate ( doit relancer l'execution de l'automate à la fin de son execution
+
+printf("1. Temps de début la simulation\n2. Temps de fin de simulation\n");
+printf("3. Définir le temps de début et de fin de simulation\n4. Cadrage\n");
+printf("5. Mode édition de sol\n6. Mode édition de météores\n7. Sauver la configuration\n8. Charger une configuration\n9. Mode pas a pas\n10. Quitter\n\n");
+}
+
+
+
+void menu(){
+
+int choa;
+
+choix();
+scanf("%d",&choa);
+
+switch(choa){
+	case 1 : 
+	time_init();
+	break;
+
+	case2 : 
+	time_end();
+	break;
+
+	case 3:
+	time_all();
+	break;
+
+	case 4
+	cadrage();
+	break;
+
+	case 5:
+	sol_edit();
+	break;
+
+	case 6:
+	metor_edit();
+	break;
+
+	case 7:
+	save_config();
+	break;
+
+	case 8:
+	load_config();
+	break;
+	
+	case 9 :
+	mode_pas_a_pas();
+	break;
+	
+	
+	case 10: 
+	exit();
+	break;
+	}
+return;
+}
+
+
+int main(){
+	
+	
+	menu();
+	
+return 0;	
+}

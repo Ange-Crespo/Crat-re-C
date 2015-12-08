@@ -1,0 +1,3 @@
+void choix();
+void menu();
+
