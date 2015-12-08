@@ -7,7 +7,7 @@ int main( int argc , char *argv[])  // a commenter avant compilation et reporter
     int m=200;
     int tab[MAX][MAX];
     init_matrice(tab,n,m);
-    affichage(tab,n,m);
+    affichage(tab,n,m,3,28,4,120);
     
     return 0; 
 }
@@ -15,18 +15,18 @@ int main( int argc , char *argv[])  // a commenter avant compilation et reporter
 
 
 
-void affichage ( int tab[MAX][MAX], int n, int m){  // pour afficher la matrice
+void affichage ( int tab[MAX][MAX], int n, int m,int ligne1, int lignef,int colonne1, int colonnef){  // pour afficher la matrice
     
-    int i=0;
-    int j=0;
+    int i = ligne1;
+    int j = colonne1;
     
-    while(i<n) {
-        while(j<m){
+    while(i<lignef) {
+        while(j<colonnef){
             printf("%d",tab[i][j]);
             //printf("  ");
             j++;
         }
-        j=0;
+        j=colonne1;
         printf("\n");
         i++;
     }
@@ -57,7 +57,7 @@ void init_matrice( int tab[MAX][MAX],int n,int m){// creer la matrice initiale p
     
 }
 
-void modifier_cellules(float tab[MAX][MAX],n,m){
+/*void modifier_cellules(float tab[MAX][MAX],n,m){
     int colonne;
     int valeur;
     printf(" quelle colonne voulez vous modifier ? ")
@@ -72,6 +72,6 @@ void modifier_cellules(float tab[MAX][MAX],n,m){
         }
 
 }
-
+*/
 
 
