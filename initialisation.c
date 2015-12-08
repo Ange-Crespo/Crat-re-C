@@ -1,56 +1,77 @@
 #include<stdio.h>
+#include"initialisation.h"
 
-
-int main( int argc , char *argv[])
+int main( int argc , char *argv[])  // a commenter avant compilation et reporter les elements necessaires dans le fichier principal .c
 {
-    int n=100;
-    float* tab[n][n];
-    init_matrice(tab,n);
-    affichage(tab,n);
+    int n=50;
+    int m=200;
+    int tab[MAX][MAX];
+    init_matrice(tab,n,m);
+    affichage(tab,n,m);
+    
     return 0; 
 }
 
 
 
 
-void affichage ( float* tab , int n ){  // pour afficher la matrice
+void affichage ( int tab[MAX][MAX], int n, int m){  // pour afficher la matrice
     
     int i=0;
+    int j=0;
     
     while(i<n) {
-        while(j<n){
-            printf("%f"tab[i][j],);
-            j++
+        while(j<m){
+            printf("%d",tab[i][j]);
+            //printf("  ");
+            j++;
         }
+        j=0;
+        printf("\n");
         i++;
     }
 }
 
-void init_matrice( float* tab[][],int n){// creer la matrice initiale pour l'automate cellulaire
-    float tab[n][n];
+void init_matrice( int tab[MAX][MAX],int n,int m){// creer la matrice initiale pour l'automate cellulaire
+    
     int i=0;
+    int j=0;
     
     while(i<n/2) {
-        while(j<n/2){
+        while(j<m/2){
             tab[i][j]=0;
             j++;
         }
         i++;
     }
+    
     i=n/2;
     while(i<n) {
-        j=n/2;
-        while(j<n){
+        j=0;
+        while(j<m){
             tab[i][j]=1;
-            j++
+            j++;
         }
-        i++
+        i++;
     }
+    
 }
 
-//void modifier_cellules(){
+void modifier_cellules(float tab[MAX][MAX],n,m){
+    int colonne;
+    int valeur;
+    printf(" quelle colonne voulez vous modifier ? ")
+    scanf("%d",&colonne);
+    printf("quelle valeur voulez vous mettre à cette colonne (0 ou 1 autoriser) ?");
+    scanf("%d",&valeur);
     
-    
-    
-    
-//}
+    int i=0;
+    while(i<n) {
+        
+    }
+        }
+
+}
+
+
+

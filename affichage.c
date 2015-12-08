@@ -13,6 +13,9 @@ void affichage ( float* tab , int n ){  // pour afficher la matrice
             printf("%f"tab[i][j],);
             j++
         }
+        
         i++;
     }
 }
+
+
