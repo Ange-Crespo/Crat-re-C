@@ -1,7 +1,9 @@
 #include<stdio.h>
+
 #include"initialisation.h"
 
 
+<<<<<<< HEAD
 
 
 
@@ -40,8 +42,13 @@ FILE* fopen(const char* nomDuFichier, const char* modeOuverture);  // w+ mode d'
 
 
 
+=======
+//__________________________________________________________________________________________________________________________________________
+>>>>>>> c5afc2ebfae9f3eac5a89207d7391ad703d2e427
 int main( int argc , char *argv[])  // a commenter avant compilation et reporter les elements necessaires dans le fichier principal .c
+
 {
+<<<<<<< HEAD
     int n=50; // nb de ligne
     int m=200; // nb colonne
     int tab[MAX][MAX]; // definition de la matrice
@@ -56,64 +63,132 @@ int main( int argc , char *argv[])  // a commenter avant compilation et reporter
 
     
     
-    
-    return 0; 
-}
+=======
 
+    int n=50;
+
+    int m=200;
+
+    int tab[MAX][MAX];
+
+    init_matrice(tab,n,m);
+
+    affichage(tab,n,m,3,28,4,120);
+
+>>>>>>> c5afc2ebfae9f3eac5a89207d7391ad703d2e427
+    
+
+<<<<<<< HEAD
 //__________________________________________________________________________________________________________________________________
+=======
+    return 0; 
 
-
-void affichage ( int tab[MAX][MAX], int n, int m,int ligne1, int lignef,int colonne1, int colonnef){  // pour afficher la matrice
-    
-    int i = ligne1;
-    int j = colonne1;
-    
-    while(i<lignef) {
-        while(j<colonnef){
-            printf("%d",tab[i][j]);
-            //printf("  ");
-            j++;
-        }
-        j=colonne1;
-        printf("\n");
-        i++;
-    }
 }
+//__________________________________________________________________________________________________________________________________________
+typedef struct //structure des cubes
+{
+int niveau_actuel;//niveau actuel du cube
+float moyenne_autour_actuel;//Moyenne des 8 cubes autour
+float energy;
+float niveau_a_atteindre;// niveau a atteindre en fonction du niveau à atteindre et de l'energy.
+float couleur;//couleur en fonction du niveau
+}cube;
+>>>>>>> c5afc2ebfae9f3eac5a89207d7391ad703d2e427
 
+//__________________________________________________________________________________________________________________________________________
+float moyenne(cube carre,n,i,j) 
+{
+
+a=;
+b=carre->pos.i-1;
+c=carre->pos.j+1;
+d=carre->pos.j-1;
+}
+//__________________________________________________________________________________________________________________________________________
+cube cube_init(){
+	
+	cube carre;
+	carre.niveau_actuel=128;
+	carre.moyenne_autour_actuel=128;
+	carre.energy=0;
+	carre.niveau_a_atteindre=128;
+	carre.couleur=#345874;
+	
+	return carre;
+}
+//__________________________________________________________________________________________________________________________________________
+void init_matrice( cube tab[MAX][MAX],int n,int m){// creer la matrice initiale pour l'automate cellulaire cette matrice est constituée de cube initialisés
+
+<<<<<<< HEAD
 //__________________________________________________________________________________________________________________________________
 
 void init_matrice( int tab[MAX][MAX],int n,int m){// creer la matrice initiale pour l'automate cellulaire
+=======
+>>>>>>> c5afc2ebfae9f3eac5a89207d7391ad703d2e427
     
+	cube carre;
+	carre=cube_init()
+	
     int i=0;
+
     int j=0;
+
     
+
     while(i<n/2) {
+
         while(j<m/2){
-            tab[i][j]=0;
+
+            tab[i][j]=carre;
+
             j++;
+
         }
+
         i++;
+
     }
+
     
+
     i=n/2;
+
     while(i<n) {
+
         j=0;
+
         while(j<m){
+
             tab[i][j]=1;
+
             j++;
+
         }
+
         i++;
+
     }
+
     
+
 }
 
+<<<<<<< HEAD
 //__________________________________________________________________________________________________________________________________
 
 void modifier_cellules(float tab[MAX][MAX],int n){ // n est le nombre de ligne
     // attention il faut dem    nder le nb de ligne pour positionner le sol
     
+=======
+
+
+/*void modifier_cellules(float tab[MAX][MAX],n,m){
+
+>>>>>>> c5afc2ebfae9f3eac5a89207d7391ad703d2e427
     int colonne;
+
     int valeur;
+<<<<<<< HEAD
     int nbcolonne;
     printf("combien de colonnes voulez-vous modifier?");
     scanf("%d",&nbcolonne);
@@ -122,8 +197,19 @@ void modifier_cellules(float tab[MAX][MAX],int n){ // n est le nombre de ligne
     scanf("%d",&colonne);
     
     printf("quelle valeur voulez vous mettre à ces ou cette colonne(s) (0 ou 1 autoriser) ?");
+=======
+
+    printf(" quelle colonne voulez vous modifier ? ")
+
+    scanf("%d",&colonne);
+
+    printf("quelle valeur voulez vous mettre à cette colonne (0 ou 1 autoriser) ?");
+
+>>>>>>> c5afc2ebfae9f3eac5a89207d7391ad703d2e427
     scanf("%d",&valeur);
+
     
+<<<<<<< HEAD
     while (valeur != 0 || 1) {
         printf(" on vous a dit de mettre 1 ou 0 rien d'autre veuillez être aimable avec ce programme !!!!");
         scanf("%d",&valeur);
@@ -217,6 +303,17 @@ void sauvegarder_configuration_courante(int tab[MAX][MAX],int n,int m,FILE* fich
             }
             j=0;
             i++;
+=======
+
+    int i=0;
+
+    while(i<n) {
+
+        
+
+    }
+
+>>>>>>> c5afc2ebfae9f3eac5a89207d7391ad703d2e427
         }
         
         fclose(fichier);
@@ -231,6 +328,7 @@ void sauvegarder_configuration_courante(int tab[MAX][MAX],int n,int m,FILE* fich
 
 //__________________________________________________________________________________________________________________________________
 
+<<<<<<< HEAD
 void charger_fichier(int n,int m,FILE* fichier){				// permet de changer une configuration de l'automate ( une matrice ) demander chemin absolut
     
     int caractereActuel = 0;
@@ -253,6 +351,14 @@ void charger_fichier(int n,int m,FILE* fichier){				// permet de changer une con
 
 
 
+
+=======
+
+
+}
+
+*/
+>>>>>>> c5afc2ebfae9f3eac5a89207d7391ad703d2e427
 
 
 

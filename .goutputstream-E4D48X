@@ -1,8 +1,7 @@
 #include <stdio.h>
-#include "timecrat.h"
-#include "affichage.h"
-#include "action.h"
-#include "initialisation.h"
+#include <timecrat.h>
+#include <edit.h>
+#include <salo.h>
 
 void choix(){
 
@@ -36,7 +35,7 @@ switch(choa){
 	break;
 
 	case 4
-	cadrage();
+	recadrage();
 	break;
 
 	case 5:
