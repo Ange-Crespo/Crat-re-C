@@ -8,9 +8,9 @@ void choix(){
 
  // premet d'afficher à tout moment le menu et donc de mettre en pause l'automate ( doit relancer l'execution de l'automate à la fin de son execution
 
-printf("1. Temps de début la simulation\n2. Temps de fin de simulation\n");
-printf("3. Définir le temps de début et de fin de simulation\n4. Cadrage\n");
-printf("5. Mode édition de sol\n6. Mode édition de météores\n7. Sauver la configuration\n8. Charger une configuration\n9. Mode pas a pas\n10. Quitter\n\n");
+printf("1. calcul au temps t \n2. afficher l'automate au temps t courant \n");
+printf("3. calculer et afficher entre t0 et t1 \n4. Cadrage\n");
+printf("5. Mode édition de sol\n7. Sauver la configuration\n7. Charger une configuration\n8. Quitter\n9. Mode pas a pas\n10. Mode édition de météores\n");
 }
 
 
@@ -27,7 +27,7 @@ switch(choa){
 	time_init();
 	break;
 
-	case2 : 
+	case 2 :
 	time_end();
 	break;
 

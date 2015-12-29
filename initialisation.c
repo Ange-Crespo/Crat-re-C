@@ -3,10 +3,44 @@
 #include"initialisation.h"
 
 
+
+
+
+
+
+
+
+
+//__________________________________________________________________________________________________________________________________
+
+
+
+
+
+
+
+
+
 //__________________________________________________________________________________________________________________________________________
+
 int main( int argc , char *argv[])  // a commenter avant compilation et reporter les elements necessaires dans le fichier principal .c
 
 {
+
+    int n=50; // nb de ligne
+    int m=200; // nb colonne
+    int tab[MAX][MAX]; // definition de la matrice
+    
+    init_matrice(tab,n,m);
+    affichage(tab,n,m,0,50,0,200);
+    FILE* fichier = NULL;
+    
+    sauvegarder_configuration_courante(tab,n,m,fichier); // pour test 
+    
+    return 0;
+
+    
+    
 
     int n=50;
 
@@ -20,6 +54,8 @@ int main( int argc , char *argv[])  // a commenter avant compilation et reporter
 
     
 
+//__________________________________________________________________________________________________________________________________
+    =======
     return 0; 
 
 }
@@ -33,15 +69,7 @@ float niveau_a_atteindre;// niveau a atteindre en fonction du niveau à atteindr
 float couleur;//couleur en fonction du niveau
 }cube;
 
-//__________________________________________________________________________________________________________________________________________
-float moyenne(cube carre,n,i,j) 
-{
 
-a=;
-b=carre->pos.i-1;
-c=carre->pos.j+1;
-d=carre->pos.j-1;
-}
 //__________________________________________________________________________________________________________________________________________
 cube cube_init(){
 	
@@ -50,14 +78,13 @@ cube cube_init(){
 	carre.moyenne_autour_actuel=128;
 	carre.energy=0;
 	carre.niveau_a_atteindre=128;
-	carre.couleur=#345874;
+	carre.couleur=#345874; // a modifier
 	
 	return carre;
 }
-//__________________________________________________________________________________________________________________________________________
-void init_matrice( cube tab[MAX][MAX],int n,int m){// creer la matrice initiale pour l'automate cellulaire cette matrice est constituée de cube initialisés
+//__________________________________________________________________________________________________________________________________
 
-    
+void init_matrice( int tab[MAX][MAX],int n,int m){// creer la matrice initiale pour l'automate cellulaire a retester pour structure
 	cube carre;
 	carre=cube_init()
 	
@@ -104,40 +131,3 @@ void init_matrice( cube tab[MAX][MAX],int n,int m){// creer la matrice initiale 
     
 
 }
-
-
-
-/*void modifier_cellules(float tab[MAX][MAX],n,m){
-
-    int colonne;
-
-    int valeur;
-
-    printf(" quelle colonne voulez vous modifier ? ")
-
-    scanf("%d",&colonne);
-
-    printf("quelle valeur voulez vous mettre à cette colonne (0 ou 1 autoriser) ?");
-
-    scanf("%d",&valeur);
-
-    
-
-    int i=0;
-
-    while(i<n) {
-
-        
-
-    }
-
-        }
-
-
-
-}
-
-*/
-
-
-
