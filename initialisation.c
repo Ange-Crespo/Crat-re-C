@@ -1,5 +1,5 @@
 #include<stdio.h>
-#include"affichage.h"
+//#include"affichage.h"
 #include"initialisation.h"
 
 
@@ -17,7 +17,7 @@ cube cube_init(){
 	return carre;
 }
 
-void(i,j)
+
 //TEST__________________________________________________________________________________________________________________________________
 void print_cube(cube carre){
 	
@@ -42,15 +42,16 @@ void init_matrice(cube tab[][MAX],int n,int m){// creer la matrice initiale pour
 		
 		if(i<n/2){i2++;}
 		else{i2--;}
+		i++;
 		while(j<=m){
 		
             tab[i][j]=carre;
 		
-		if(j<m/2){j2++;}
-		else {j2--;}
-		tab[i][j].energy=tab[i][j].energy+j2+i2;
-
-		
+			if(j<m/2){j2++;}
+			else {j2--;}
+			tab[i][j].energy=tab[i][j].energy+j2+i2;
+			j++;
+			
 		}
 	}
 
