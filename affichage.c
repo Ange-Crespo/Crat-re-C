@@ -12,7 +12,7 @@
 
 
 
-void affichage ( int tab[MAX][MAX], int n, int m,int ligne1, int lignef,int colonne1, int colonnef){  // pour afficher la matrice
+void affichage( cube tab[][MAX], int n, int m,int ligne1, int lignef,int colonne1, int colonnef){  // pour afficher la matrice
 
     
 
@@ -26,7 +26,7 @@ void affichage ( int tab[MAX][MAX], int n, int m,int ligne1, int lignef,int colo
 
         while(j<colonnef){
 
-            printf("%d",tab[i][j]);
+            print_cube("%d",tab[i][j]);
 
             //printf("  ");
 
@@ -36,12 +36,12 @@ void affichage ( int tab[MAX][MAX], int n, int m,int ligne1, int lignef,int colo
 
         j=colonne1;
 
-        printf("\n");
+        print_cube("\n");
 
         i++;
 
     }
-
+return;
 }
 
 

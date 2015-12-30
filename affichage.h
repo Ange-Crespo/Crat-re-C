@@ -1,7 +1,7 @@
 
 
 
-
+void affichage( cube tab[][MAX], int n, int m, int ligne1, int colonne1, int lignef, int colonnef);
 void affichage_etat_courant(); 			// affiche l'etat actuel de la matrice 
 
 
@@ -14,4 +14,3 @@ void menu(int* choix); 				// premet d'afficher à tout moment le menu et donc d
 
 void cadrage(); 				// recadre la console aux coordonnées voulu si affichage plus grand que la console 
 
-void affichage ( int tab[MAX][MAX], int n , int m ,int ligne1, int colonne1,int lignef, int colonnef);
