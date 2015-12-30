@@ -8,7 +8,9 @@ float moyenne_autour_actuel;//Moyenne des 8 cubes autour
 float energy;
 float niveau_a_atteindre;// niveau a atteindre en fonction du niveau à atteindre et de l'energy.
 float couleur;//couleur en fonction du niveau
+int palier;
 }cube;
+
 
 
 void init_matrice(cube tab[][MAX], int n, int m);// creer la matrice initiale pour l'automate cellulaire cette matrice est constituée de cube initialisés

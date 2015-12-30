@@ -16,6 +16,8 @@ cube cube_init(){
 	
 	return carre;
 }
+
+void(i,j)
 //TEST__________________________________________________________________________________________________________________________________
 void print_cube(cube carre){
 	
@@ -30,46 +32,27 @@ void init_matrice(cube tab[][MAX],int n,int m){// creer la matrice initiale pour
 	carre=cube_init();
 	
     int i=0;
-
     int j=0;
-
+	
+	int i2=0;
+	int j2=0;
     
 
-    while(i<n/2) {
-
-        while(j<m/2){
-
+    while(i<=n) {
+		
+		if(i<n/2){i2++;}
+		else{i2--;}
+		while(j<=m){
+		
             tab[i][j]=carre;
+		
+		if(j<m/2){j2++;}
+		else {j2--;}
+		tab[i][j].energy=tab[i][j].energy+j2+i2;
 
-            j++;
-
-        }
-
-        i++;
-
-    }
-
-    
-
-    i=n/2;
-
-    while(i<n) {
-
-        j=0;
-
-        while(j<m){
-
-            tab[i][j]=carre;
-
-            j++;
-
-        }
-
-        i++;
-
-    }
-
-    
+		
+		}
+	}
 
 }
 
@@ -81,7 +64,7 @@ int main( int argc , char *argv[])  // a commenter avant compilation et reporter
 
     int n=50; // nb de ligne
     int m=200; // nb colonne
-    cube tab[MAX][MAX]; // definition de la matrice ERREUR DE SEGMENTATION!!!!
+    cube tab[MAX][MAX]; // definition de la matrice ERREUR DE SEGMENTATION!!!! réparer
     cube carre;
     init_matrice(tab,n,m);
     /*affichage(tab,n,m,0,50,0,200);*/

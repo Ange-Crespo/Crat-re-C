@@ -27,13 +27,19 @@ void niveau_futur(int i, int j,cube tab[][MAX], int n, int m)
 	return;
 }
 
-float exp_suiv(float a, int k)//exp(ka+)
+float exp_suiv(float a, int k)//exp(ka+epsilom)
 {
 	
-	a=
 	
+	return
 	
 }
+
+float energy_suiv_time(float a){
+	
+	a-2;
+}
+
 
 void energizer_point(int i, int j,cube tab[][MAX],int n, int m){
 	//l'energie est fonction du temps et de l'espace! on simule l'arrivé d'une métorite très fine (sur un seul point) seul le temps agit
