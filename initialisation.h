@@ -1,5 +1,5 @@
 #define MAX 500 //max 723 au dessus erreur de segmentation...
-
+#define seuil 5 //seuil à partir duquel l'énergie est nulle.
 
 typedef struct //structure des cubes
 {
