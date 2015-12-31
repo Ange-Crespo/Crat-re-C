@@ -1,5 +1,6 @@
 #include<stdlib.h>
 #include<stdio.h>
+#include"initialisation.h"
 
 
 void sauvegarder_configuration_courante(int tab[MAX][MAX],int n,int m);
@@ -21,11 +22,46 @@ mode d'ouverture r+ pour lecture et ecriture
 
 
 
+typedef struct //structure des cubes
+{
+    int niveau_actuel;//niveau actuel du cube
+    float moyenne_autour_actuel;//Moyenne des 8 cubes autour
+    float energy;
+    float niveau_a_atteindre;// niveau a atteindre en fonction du niveau à atteindre et de l'energy.
+    float couleur;//couleur en fonction du niveau
+}cube;
+
+
+//__________________________________________________________________________________________________________________________________________
+
+cube cube_init(){
+    
+    cube carre;
+    carre.niveau_actuel=128;
+    carre.moyenne_autour_actuel=128;
+    carre.energy=0;
+    carre.niveau_a_atteindre=128;
+    carre.couleur=32; // a modifier
+    
+    return carre;
+}
+
+//__________________________________________________________________________________________________________________________________________
+
 
 int main( int argc , char *argv[])  // a commenter avant compilation et reporter les elements necessaires dans le fichier principal .c
 {
     FILE* fichier = NULL;
     sauvegarder_configuration_courante(tab[MAX][MAX],n,m,fichier);
+    
+    
+    int n=50; // nb de ligne
+    int m=200; // nb colonne
+    int tab[MAX][MAX]; // definition de la matrice
+    
+    init_matrice(tab,n,m);
+    
+    
     return 0;
 }
 
@@ -37,7 +73,7 @@ void sauvegarder_configuration_courante(int tab[MAX][MAX],int n,int m,FILE* fich
     
     int i=0;
     int j=0;
-    int temps;
+    cube temps;
     
     fichier = fopen("test.txt", "w");// ouvre text.txt en lecture et ecriture
     //Le pointeur fichier devient alors un pointeur sur test.txt.
@@ -47,7 +83,7 @@ void sauvegarder_configuration_courante(int tab[MAX][MAX],int n,int m,FILE* fich
         while (i<n) {
             while(j<m){
                 temps = tab[i][j];
-                fprintf(fichier, "%d", temps);
+                fwrite(&temps, sizeof(cube), 1 ,fichier);
                 j++;
             }
             j=0;
@@ -65,81 +101,45 @@ void sauvegarder_configuration_courante(int tab[MAX][MAX],int n,int m,FILE* fich
 
 
 //__________________________________________________________________________________________________________________________________
-
-void modifier_cellules(float tab[MAX][MAX],int n){ // n est le nombre de ligne
-    // attention il faut dem    nder le nb de ligne pour positionner le sol
     
-    
-    
-    
-    /*void modifier_cellules(float tab[MAX][MAX],n,m){
-     
-     
-     int colonne;
-     
-     int valeur;
-     
-     int nbcolonne;
-     printf("combien de colonnes voulez-vous modifier?");
-     scanf("%d",&nbcolonne);
-     
-     printf(" A partir de quelle colonne voulez-vous modifier ? ");
-     scanf("%d",&colonne);
-     
-     printf("quelle valeur voulez vous mettre à ces ou cette colonne(s) (0 ou 1 autoriser) ?");
-     
-     
-     printf(" quelle colonne voulez vous modifier ? ")
-     
-     scanf("%d",&colonne);
-     
-     printf("quelle valeur voulez vous mettre à cette colonne (0 ou 1 autoriser) ?");
-     
-     
-     scanf("%d",&valeur);
-     
-     
-     <<<<<<< HEAD
-     while (valeur != 0 || 1) {
-     printf(" on vous a dit de mettre 1 ou 0 rien d'autre veuillez être aimable avec ce programme !!!!");
-     scanf("%d",&valeur);
-     }
-     int i=0;
-     while(i<n) {                            // modification des colonnes voulus
-     while (colonne<colonne+nbcolonne) {
-     tab[i][colonne]=valeur;
-     colonne++;
-     }
-     i++;
-     }
-     }
-     
-     */
-     
-     //__________________________________________________________________________________________________________________________________
-    
- 
-    
-     //__________________________________________________________________________________________________________________________________
-    
-        void charger_fichier(int n,int m,FILE* fichier){				// permet de changer une configuration de l'automate ( une matrice ) demander chemin absolut
+void charger_fichier(int tab[MAX][MAX],int n,int m,FILE* fichier){				// permet de changer une configuration de l'automate ( une matrice ) demander chemin absolut
         
-        int caractereActuel = 0;
+    cube test;
         
-        fichier = fopen("test.txt", "r");
+    fichier = fopen("test.txt", "r");
         
-        if (fichier != NULL)
-        {
-            // Boucle de lecture des caractères un à un
-            do
-            {
-                caractereActuel = fgetc(fichier); // On lit le caractère
-                printf("%c", caractereActuel); // On l'affiche
-            } while (caractereActuel != EOF); // On continue tant que fgetc n'a pas retourné EOF (fin de fichier)
+    if (fichier != NULL)
+    {
+            
+            
             
             fclose(fichier);
-        }
-        
     }
-    
-}
+        
+  }
+
+/*
+ 
+ // Boucle de lecture des caractères un à un
+ do
+ {
+ caractereActuel = fgetc(fichier); // On lit le caractère
+ printf("%c", caractereActuel); // On l'affiche
+ } while (caractereActuel != EOF); // On continue tant que fgetc n'a pas retourné EOF (fin de fichier)
+ */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

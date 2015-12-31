@@ -15,12 +15,6 @@
 
 
 
-
-
-
-
-
-
 //__________________________________________________________________________________________________________________________________________
 
 int main( int argc , char *argv[])  // a commenter avant compilation et reporter les elements necessaires dans le fichier principal .c
@@ -39,8 +33,6 @@ int main( int argc , char *argv[])  // a commenter avant compilation et reporter
     
     return 0;
 
-    
-    
 
     int n=50;
 
@@ -55,7 +47,6 @@ int main( int argc , char *argv[])  // a commenter avant compilation et reporter
     
 
 //__________________________________________________________________________________________________________________________________
-    =======
     return 0; 
 
 }
@@ -78,7 +69,7 @@ cube cube_init(){
 	carre.moyenne_autour_actuel=128;
 	carre.energy=0;
 	carre.niveau_a_atteindre=128;
-	carre.couleur=#345874; // a modifier
+	carre.couleur=32; // a modifier
 	
 	return carre;
 }
@@ -87,47 +78,14 @@ cube cube_init(){
 void init_matrice( int tab[MAX][MAX],int n,int m){// creer la matrice initiale pour l'automate cellulaire a retester pour structure
 	cube carre;
 	carre=cube_init()
-	
     int i=0;
-
     int j=0;
-
     
-
-    while(i<n/2) {
-
-        while(j<m/2){
-
-            tab[i][j]=carre;
-
-            j++;
-
-        }
-
-        i++;
-
-    }
-
-    
-
-    i=n/2;
-
     while(i<n) {
-
-        j=0;
-
         while(j<m){
-
-            tab[i][j]=1;
-
+            tab[i][j]=carre;
             j++;
-
         }
-
+        j=0;
         i++;
-
     }
-
-    
-
-}
