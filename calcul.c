@@ -81,6 +81,8 @@ void moyenne(int i,int j,cube tab[][MAX], int n,int m)
 return;
 }
 
+//__________________________________________________________________________________________________________________________________________
+
 void niveau_futur(int i, int j,cube tab[][MAX], int n, int m)//n et m inutiles ici
 {
 	
@@ -121,6 +123,8 @@ float energy_suiv_time(float a){//modélisation de l'énergie linéaire
 }
 
 
+//__________________________________________________________________________________________________________________________________________
+
 void energizer_point(int i, int j,cube tab[][MAX],int n, int m){
 	//l'energie est fonction du temps et de l'espace! on simule l'arrivé d'une métorite très fine (sur un seul point) seul le temps agit
 	tab[i][j].energy=energy_suiv_point(tab[i][j].energy);
@@ -128,6 +132,8 @@ void energizer_point(int i, int j,cube tab[][MAX],int n, int m){
 	
 	return;
 }
+
+//__________________________________________________________________________________________________________________________________________
 
 void mise_jour_tab(cube tab[][MAX],n,m){
 	
