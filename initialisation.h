@@ -12,6 +12,7 @@ int palier;
 }cube;
 
 
+<<<<<<< HEAD
 
 void init_matrice(cube tab[][MAX], int n, int m);// creer la matrice initiale pour l'automate cellulaire cette matrice est constituée de cube initialisés
 
@@ -29,8 +30,12 @@ void charger_fichier(int n,int m,FILE* fichier);				// permet de changer une con
 
 void charger_fichier();				// permet de changer une configuration de l'automate ( une matrice ) demander chemin absolut 
 
+=======
+void init_matrice( cube tab[MAX][MAX],int n,int m);// creer la matrice initiale pour l'automate cellulaire cette matrice est constituée de cube initialisés
+>>>>>>> 07ae325e407aec1d962f96c4ba9a4716e9f95147
 
 cube cube_init();
 void print_cube();
 
 
+cube cube_init(void);
