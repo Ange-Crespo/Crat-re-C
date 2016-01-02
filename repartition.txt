@@ -1,0 +1,30 @@
+enlever les variables globales
+changer le switch du menu (moi)
+time_crat(moi):
+structure cube :
+testcube (moi)
+
+méthode : calcul niveau à atteindre
+mise à jour du niveau
+modification du niveau
+calcul du dépassement
+calcul de l'énergy
+calcul de la couleur
+affichage de la couleur
+repérages des case adjacente pour calcul (conditiion aux limites)
+
+action :  edit 
+	sauvegarder (fonction miracle?)(taille fixée)
+	charger
+
+calcul : méthode + calcul du tableau entier
+(calcul entre t0 et t1) (moi)
+affichage :affichage couleur (+ boucle)
+affichage échelle. (ou fournir à côté)
+
+
+
+
+https://cdn.fbsbx.com/hphotos-xtf1/v/t59.2708-21/12317298_1030887273630117_933965037_n.pdf/GestionDeLaCouleurEnModeConsole.pdf?oh=1817b6028e487926e3b145378380a445&oe=56851289&dl=1
+
+
