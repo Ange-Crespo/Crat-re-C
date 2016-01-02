@@ -7,7 +7,7 @@ int niveau_actuel;//niveau actuel du cube
 float moyenne_autour_actuel;//Moyenne des 8 cubes autour
 float energy;
 float niveau_a_atteindre;// niveau a atteindre en fonction du niveau à atteindre et de l'energy.
-float couleur;//couleur en fonction du niveau
+char* couleur;//couleur en fonction du niveau
 int palier;
 }cube;
 
