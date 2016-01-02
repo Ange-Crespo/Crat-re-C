@@ -36,7 +36,7 @@ cube cube_init(){
 
 void affichage ( int tab[MAX][MAX], int n, int m,int ligne1, int lignef,int colonne1, int colonnef){  // pour afficher la matrice
 
-    
+    int couleuraff;
 
     int i = ligne1;
 
@@ -47,8 +47,13 @@ void affichage ( int tab[MAX][MAX], int n, int m,int ligne1, int lignef,int colo
     while(i<lignef) {
 
         while(j<colonnef){
-
-            printf("%d",tab[i][j]);
+            
+            couleuraff = tab[i][j].couleur;
+            couleurscr(couleuraff);
+            
+            printf("%d",tab[i][j].palier);
+            
+            couleurscr(0);
 
             //printf("  ");
 

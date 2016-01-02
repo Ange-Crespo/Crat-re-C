@@ -7,17 +7,7 @@
 
 #endif
 
-#define couleur(param) printf("\033[%sm",param)
-
-
-
-
-
-void affichage_etat_courant(); 			// affiche l'etat actuel de la matrice 
-
-
-
-void menu(int* choix); 				// premet d'afficher à tout moment le menu et donc de mettre en pause l'automate ( doit relancer l'execution de l'automate à la fin de son execution 
+#define couleurscr(param) printf("\033[%sm",param)
 
 
 

@@ -60,7 +60,7 @@ int main( int argc , char *argv[])  // a commenter avant compilation et reporter
     int tab[MAX][MAX]; // definition de la matrice
     
     init_matrice(tab,n,m);
-    
+    sauvegarder_configuration_courante(tab[MAX][MAX],n,m,fichier);
     
     return 0;
 }
@@ -71,30 +71,35 @@ int main( int argc , char *argv[])  // a commenter avant compilation et reporter
 
 void sauvegarder_configuration_courante(int tab[MAX][MAX],int n,int m,FILE* fichier){
     
-    int i=0;
+    /*int i=0;
     int j=0;
     cube temps;
+    */
     
     fichier = fopen("test.txt", "w");// ouvre text.txt en lecture et ecriture
     //Le pointeur fichier devient alors un pointeur sur test.txt.
     
     if (fichier != NULL)
     {
-        while (i<n) {
+       /* while (i<n) {
             while(j<m){
                 temps = tab[i][j];
-                fwrite(&temps, sizeof(cube), 1 ,fichier);
+                fwrite(&temps, sizeof(temps), 1 ,fichier);
                 j++;
             }
             j=0;
             i++;
         }
+        */
+        
+        fwrite(tab, sizeof(tab), 1 ,fichier);
+
         
         fclose(fichier);
     }
     else
     {
-        // On affiche un message d'erreur si on veut
+        // On affiche un message d'erreur
         printf("Impossible d'ouvrir le fichier test.txt");
     }
 }
@@ -103,17 +108,20 @@ void sauvegarder_configuration_courante(int tab[MAX][MAX],int n,int m,FILE* fich
 //__________________________________________________________________________________________________________________________________
     
 void charger_fichier(int tab[MAX][MAX],int n,int m,FILE* fichier){				// permet de changer une configuration de l'automate ( une matrice ) demander chemin absolut
-        
-    cube test;
-        
+
     fichier = fopen("test.txt", "r");
         
     if (fichier != NULL)
     {
-            
-            
-            
+            fread(tab, sizeof(tab), 1 ,fichier);
+    
             fclose(fichier);
+    }
+    
+    else
+    {
+            // On affiche un message d'erreur
+            printf("Impossible d'ouvrir le fichier test.txt");
     }
         
   }
