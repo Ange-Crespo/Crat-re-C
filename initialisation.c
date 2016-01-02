@@ -21,37 +21,7 @@
 
 //__________________________________________________________________________________________________________________________________________
 
-int main( int argc , char *argv[])  // a commenter avant compilation et reporter les elements necessaires dans le fichier principal .c
 
-{
-
-    int n=50; // nb de ligne
-    int m=200; // nb colonne
-    int tab[MAX][MAX]; // definition de la matrice
-    
-    init_matrice(tab,n,m);
-    affichage(tab,n,m,0,50,0,200);
-    FILE* fichier = NULL;
-    
-    sauvegarder_configuration_courante(tab,n,m,fichier); // pour test 
-    
-    return 0;
-
-
-    int n=50;
-
-    int m=200;
-
-    int tab[MAX][MAX];
-
-    init_matrice(tab,n,m);
-
-    affichage(tab,n,m,3,28,4,120);
-
-    
-
-//__________________________________________________________________________________________________________________________________
-    return 0; 
 
 }
 //__________________________________________________________________________________________________________________________________________
